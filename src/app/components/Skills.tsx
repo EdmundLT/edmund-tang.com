@@ -22,7 +22,7 @@ export const Skills = () => {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-4 py-8 gap-x-4 sm:grid-cols-2 gap-y-4">
+      <div className="grid lg:grid-cols-4 py-8 gap-x-4 grid-cols-2 gap-y-4">
         <div>
           <p className="text-slate-50">LANGUAGES</p>
           <p className="mt-2 text-slate-300">Javascript (ES6)</p>

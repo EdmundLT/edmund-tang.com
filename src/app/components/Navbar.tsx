@@ -28,13 +28,13 @@ const Navbar = () => {
   return (
     <nav className={navbarClasses}>
       <div className="flex justify-between items-center">
-        <a href="/" className="text-2xl font-bold text-gray-800">
+        <a href="/" className="font-bold text-gray-800">
           <img
             src="assets/images/logo.png"
             className="h-14 hover:brightness-50 hover:duration-500"
           ></img>
         </a>
-        <div className="flex space-x-6 text-white">
+        <div className="flex space-x-6 text-white text-lg">
           <div
             onClick={(e) => {
               e.preventDefault();
