@@ -89,14 +89,14 @@ const projectList: TProject[] = [
 
 const Projects = () => {
   return (
-    <div className="gap-16 items-center py-32 px-4 mx-auto max-w-5xl lg:py-32 lg:px-6">
+    <div className="gap-16 items-center py-32 px-4 mx-auto max-w-5xl lg:py-32 lg:px-6" id="projects">
       <p className="mb-4 text-3xl tracking-tight font-extrabold text-slate-50">
         PROJECTS
       </p>
       {projectList.map((project) => {
         return (
-          <div className="py-8">
-            <ProjectRow project={project} key={project.url} />
+          <div className="py-8" key={project.url}>
+            <ProjectRow project={project}  />
           </div>
         );
       })}

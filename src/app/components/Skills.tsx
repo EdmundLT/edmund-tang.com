@@ -1,7 +1,7 @@
 import React from "react";
 export const Skills = () => {
   return (
-    <div className="items-center py-32 px-4 mx-auto max-w-5xl lg:py-32 lg:px-6">
+    <div className="items-center py-32 px-4 mx-auto max-w-5xl lg:py-32 lg:px-6" id="skills">
       <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
         <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-slate-50">
           Why Choose Me?

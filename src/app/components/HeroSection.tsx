@@ -2,7 +2,7 @@ import React from "react";
 import { AboutMe } from "./AboutMe";
 const HeroSection = () => {
   return (
-    <div className="items-center py-12 px-4 mx-auto max-w-5xl lg:py-12 lg:px-6 text-slate-50">
+    <div className="items-center py-12 px-4 mx-auto max-w-5xl lg:py-12 lg:px-6 text-slate-50" id="about">
       <div className="mx-auto py-32 items-center flex-col">
         <div className="pt-32">
           <h1 className="my-4 text-5xl font-bold leading-tight">EDMUND TANG</h1>

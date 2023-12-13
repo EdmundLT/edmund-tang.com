@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useEffect, useState } from "react";
 
@@ -22,9 +22,7 @@ const Navbar = () => {
   }, []);
 
   const navbarClasses = ` mx-auto px-6 py-6 sticky top-0 ${
-    scrolling
-      ? "bg-transparent"
-      : "backdrop-filter backdrop-blur-lg"
+    scrolling ? "bg-transparent" : "backdrop-filter backdrop-blur-lg"
   } backdrop-filter 
   }`;
   return (
@@ -37,18 +35,42 @@ const Navbar = () => {
           ></img>
         </a>
         <div className="flex space-x-6 text-white">
-          <a href="#" className="hover:text-slate-400 hover:duration-500">
+          <div
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.replace("/#about");
+            }}
+            className="hover:text-slate-400 hover:duration-500"
+          >
             ABOUT
-          </a>
-          <a href="#" className="hover:text-slate-400 hover:duration-500">
+          </div>
+          <div
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.replace("/#skills");
+            }}
+            className="hover:text-slate-400 hover:duration-500"
+          >
+            SKILLS
+          </div>
+          <div
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.replace("/#experiences");
+            }}
+            className="hover:text-slate-400 hover:duration-500"
+          >
             EXPERIENCE
-          </a>
-          <a href="#" className="hover:text-slate-400 hover:duration-500">
+          </div>
+          <div
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.replace("/#projects");
+            }}
+            className="hover:text-slate-400 hover:duration-500"
+          >
             PROJECT
-          </a>
-          <a href="#" className="hover:text-slate-400 hover:duration-500">
-            CONTACT
-          </a>
+          </div>
         </div>
       </div>
     </nav>

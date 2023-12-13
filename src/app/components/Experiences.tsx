@@ -42,7 +42,7 @@ const experiences: TExperience[] = [
 
 export const Experiences = () => {
   return (
-    <div className="items-center py-12 px-4 mx-auto max-w-5xl lg:py-16 lg:px-6">
+    <div className="items-center py-12 px-4 mx-auto max-w-5xl lg:py-16 lg:px-6" id="experiences">
       <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-slate-50">
         EXPERIENCES
       </h2>
