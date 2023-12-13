@@ -21,7 +21,7 @@ const Navbar = () => {
     };
   }, []);
 
-  const navbarClasses = ` mx-auto px-6 py-6 sticky top-0 ${
+  const navbarClasses = `mx-auto px-6 py-6 sticky top-0 ${
     scrolling ? "bg-transparent" : "backdrop-filter backdrop-blur-lg"
   } backdrop-filter 
   }`;
@@ -34,7 +34,7 @@ const Navbar = () => {
             className="h-14 hover:brightness-50 hover:duration-500"
           ></img>
         </a>
-        <div className="flex space-x-6 text-white text-lg">
+        <div className="hidden md:flex lg:flex space-x-6 text-white text-lg">
           <div
             onClick={(e) => {
               e.preventDefault();

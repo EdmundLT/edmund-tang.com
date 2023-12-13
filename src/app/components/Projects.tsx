@@ -14,12 +14,12 @@ const ProjectRow = ({ project }: { project: TProject }) => {
         {title}
       </a>
       <p className="text-slate-300 mt-2 max-w-3xl">{description}</p>
-      <div className="flex gap-x-2 mt-4">
+      <div className="mt-4 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {tag.map((item) => {
           return (
             <p
               key={item}
-              className="border py-1 px-3 rounded border-pink-500 bg-transparent"
+              className="border py-1 px-3 rounded border-pink-500 bg-transparent text-xs md:text-base lg:text-base"
             >
               {item}
             </p>

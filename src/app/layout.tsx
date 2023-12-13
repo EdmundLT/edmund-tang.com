@@ -14,14 +14,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      style={{
-        background:
-          "linear-gradient(90deg, rgba(4, 54, 74) 24%,  rgb(23, 107, 135) 100%)",
-      }}
-    >
-      <body>
+    <html lang="en">
+      <body
+        
+        style={{
+          background:
+            "linear-gradient(90deg, rgba(4, 54, 74) 24%,  rgb(23, 107, 135) 100%)",
+        }}
+      >
         <Navbar />
 
         {children}
