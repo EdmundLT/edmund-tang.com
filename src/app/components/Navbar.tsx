@@ -71,6 +71,12 @@ const Navbar = () => {
           >
             PROJECT
           </div>
+          <a
+          href="/blogs"
+            className="hover:text-slate-400 hover:duration-500"
+          >
+            BLOGS
+          </a>
         </div>
       </div>
     </nav>

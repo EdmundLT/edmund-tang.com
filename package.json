@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "daisyui": "^4.4.23",
     "framer-motion": "^10.16.16",
     "next": "14.0.4",
     "react": "^18",

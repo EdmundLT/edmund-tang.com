@@ -19,7 +19,7 @@ export default function RootLayout({
         
         style={{
           background:
-            "linear-gradient(90deg, rgba(4, 54, 74) 24%,  rgb(23, 107, 135) 100%)",
+            "linear-gradient(90deg, rgba(17, 37, 57) 24%,  rgb(23, 107, 135) 100%)",
         }}
       >
         <Navbar />
