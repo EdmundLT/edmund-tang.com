@@ -30,7 +30,7 @@ const Navbar = () => {
       <div className="flex justify-between items-center">
         <a href="/" className="font-bold text-gray-800">
           <img
-            src="assets/images/logo.png"
+            src="/assets/images/logo.png"
             className="h-14 hover:brightness-50 hover:duration-500"
           ></img>
         </a>
