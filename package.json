@@ -1,6 +1,6 @@
 {
   "name": "edmund-tang.com",
-  "engines": {"node": "20.9.0"},
+  "engines": {"node": "18.x"},
   "version": "0.1.0",
   "private": true,
   "scripts": {
