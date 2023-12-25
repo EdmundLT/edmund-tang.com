@@ -2,7 +2,7 @@ import React from "react";
 import { FaInstagram, FaGithub, FaLinkedinIn } from "react-icons/fa";
 export default function Footer() {
   return (
-    <footer className=" bg-transparent text-center text-white my-6">
+    <footer className=" bg-transparent text-center text-white my-6 py-6">
       <div className=" bg-transparent p-4 text-center text-slate-50">
         © 2023 Copyright Edmund Tang
       </div>
