@@ -36,15 +36,15 @@ function getToday(datestring: any) {
   const day = date.getDate();
   const month = months[date.getMonth()];
   const year = date.getFullYear();
-  let today = `${month} ${day}, ${year}`;
+  const today = `${month} ${day}, ${year}`;
 
   return today;
 }
 
-const notion = new Client({
+export const notion = new Client({
   auth: process.env.NOTION_API_KEY,
 });
-const getPageMetaData = (post: any) => {
+export const getPageMetaData = (post: any) => {
   const getTags = (tags: any) => {
     const allTags = tags.map((tag: any) => {
       return tag.name;
