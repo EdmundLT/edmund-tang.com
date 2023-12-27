@@ -17,6 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta
+          name="google-site-verification"
+          content="F10J8JMuczUqPfdnNt8Pj-YBKNKHUfvTGqIC6osz4YQ"
+        />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-047V7E0L6Q" />
         <Script id="google-analytics">
           {`
