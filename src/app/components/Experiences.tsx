@@ -30,7 +30,7 @@ const experiences: TExperience[] = [
   },
   {
     company: "ITTO Digital - Hong Kong",
-    title: "Web Developer",
+    title: "Front-end Developer",
     time: "May 2020 - May 2022",
   },
   {

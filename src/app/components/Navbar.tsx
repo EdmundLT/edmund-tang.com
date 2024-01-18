@@ -42,7 +42,7 @@ const Navbar = () => {
             }}
             className="hover:text-slate-400 hover:duration-500"
           >
-            ABOUT
+            About
           </div>
           <div
             onClick={(e) => {
@@ -51,7 +51,7 @@ const Navbar = () => {
             }}
             className="hover:text-slate-400 hover:duration-500"
           >
-            SKILLS
+            Skills
           </div>
           <div
             onClick={(e) => {
@@ -60,7 +60,7 @@ const Navbar = () => {
             }}
             className="hover:text-slate-400 hover:duration-500"
           >
-            EXPERIENCE
+            Experience
           </div>
           <div
             onClick={(e) => {
@@ -69,13 +69,13 @@ const Navbar = () => {
             }}
             className="hover:text-slate-400 hover:duration-500"
           >
-            PROJECT
+            Project
           </div>
           <a
           href="/blogs"
             className="hover:text-slate-400 hover:duration-500"
           >
-            BLOGS
+            Blogs
           </a>
         </div>
       </div>
