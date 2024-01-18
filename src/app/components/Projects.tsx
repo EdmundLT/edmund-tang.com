@@ -32,6 +32,17 @@ const ProjectRow = ({ project }: { project: TProject }) => {
 
 const projectList: TProject[] = [
   {
+    title: "PriceFresh",
+    description: `Price compare platform that compare grocery price, and found the closet one near user location.`,
+    url: "https://otto-notes.com/en",
+    tag: [
+      "React.js",
+      "Google Map API",
+      "Tailwind CSS",
+      "PostgreSQL",
+    ],
+  },
+  {
     title: "Otto Notes",
     description: `A personal blog with multi-languages SEO blog posts. Over 1,000 users
             traffic daily. Monitoring data in Google Analytic, create Ad revenue
@@ -89,14 +100,17 @@ const projectList: TProject[] = [
 
 const Projects = () => {
   return (
-    <div className="gap-16 items-center py-32 px-4 mx-auto max-w-5xl lg:py-32 lg:px-6" id="projects">
+    <div
+      className="gap-16 items-center py-32 px-4 mx-auto max-w-5xl lg:py-32 lg:px-6"
+      id="projects"
+    >
       <p className="mb-4 text-3xl tracking-tight font-extrabold text-slate-50">
         PROJECTS
       </p>
       {projectList.map((project) => {
         return (
           <div className="py-8" key={project.url}>
-            <ProjectRow project={project}  />
+            <ProjectRow project={project} />
           </div>
         );
       })}

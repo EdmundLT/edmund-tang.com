@@ -12,7 +12,7 @@ const HeroSection = () => {
         <FadeIn delay={250}>
           <div className="pt-32">
             <h1 className="my-4 text-5xl font-bold leading-tight">
-              EDMUND TANG
+              Edmund Tang
             </h1>
             <p className="text-2xl mb-8">
               Profressional Front End Developer & Tech Enthusiast
