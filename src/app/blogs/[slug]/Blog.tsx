@@ -5,6 +5,9 @@ import { gql } from "@apollo/client";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BlogPost } from "../../../../types";
+import { Metadata } from "next";
+
+
 
 const page = ({ params }: any) => {
   const [blog, setBlog] = useState<BlogPost>();
@@ -14,11 +17,7 @@ const page = ({ params }: any) => {
     await client
       .query({
         query: gql`
-          query (
-            $preview: Boolean
-            $slug: String!
-            $limit: Int
-          ) {
+          query ($preview: Boolean, $slug: String!, $limit: Int) {
             blogCollection(
               preview: $preview
               where: { slug: $slug }
@@ -58,8 +57,8 @@ const page = ({ params }: any) => {
         },
       })
       .then((res: any) => {
-        for (const asset of res.data.blogCollection.items[0].content.links.assets
-          .block) {
+        for (const asset of res.data.blogCollection.items[0].content.links
+          .assets.block) {
           assetMap.set(asset.sys.id, asset);
         }
         console.log(res.data.blogCollection.items[0]);
@@ -89,39 +88,37 @@ const page = ({ params }: any) => {
     </a>
   );
 
- const RichTextoptions = {
-  renderNode: {
-    [BLOCKS.HEADING_1]: (node: any, children: any) => (
-      <Heading1>{children}</Heading1>
-    ),
-    [BLOCKS.HEADING_2]: (node: any, children: any) => (
-      <Heading2>{children}</Heading2>
-    ),
-    [BLOCKS.HEADING_3]: (node: any, children: any) => (
-      <Heading3>{children}</Heading3>
-    ),
-    [BLOCKS.PARAGRAPH]: (node: any, children: any) => <Text>{children}</Text>,
-    [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
-      <ListItem>{children}</ListItem>
-    ),
-    [INLINES.HYPERLINK]: (node: any, children: any) => (
-      <Link href={node.data.uri}>{children}</Link>
-    ),
-    [BLOCKS.EMBEDDED_ASSET]: (node:any, next:any) => {
-      // find the asset in the assetMap by ID
-      const assetId = node.data.target.sys.id
-      console.log(assetId)
-      const asset = assetMap.get(assetId)
+  const RichTextoptions = {
+    renderNode: {
+      [BLOCKS.HEADING_1]: (node: any, children: any) => (
+        <Heading1>{children}</Heading1>
+      ),
+      [BLOCKS.HEADING_2]: (node: any, children: any) => (
+        <Heading2>{children}</Heading2>
+      ),
+      [BLOCKS.HEADING_3]: (node: any, children: any) => (
+        <Heading3>{children}</Heading3>
+      ),
+      [BLOCKS.PARAGRAPH]: (node: any, children: any) => <Text>{children}</Text>,
+      [BLOCKS.LIST_ITEM]: (node: any, children: any) => (
+        <ListItem>{children}</ListItem>
+      ),
+      [INLINES.HYPERLINK]: (node: any, children: any) => (
+        <Link href={node.data.uri}>{children}</Link>
+      ),
+      [BLOCKS.EMBEDDED_ASSET]: (node: any, next: any) => {
+        // find the asset in the assetMap by ID
+        const assetId = node.data.target.sys.id;
+        console.log(assetId);
+        const asset = assetMap.get(assetId);
 
-      // render the asset accordingly
-      return (
-        <img src={asset.url} alt="My image alt text" />
-      );
+        // render the asset accordingly
+        return <img src={asset.url} alt="My image alt text" />;
+      },
     },
-  },
 
-  renderText: (text: any) => text.replace("!", "?"),
-};
+    renderText: (text: any) => text.replace("!", "?"),
+  };
   return (
     <main>
       <article>
@@ -159,7 +156,7 @@ const page = ({ params }: any) => {
             alt={blog?.featuredImage.title}
           />
         </header>
-        
+
         {blog ? (
           <div className="mx-auto mt-5 max-w-screen-md space-y-12 px-4 py-5 text-lg text-slate-50 ">
             {documentToReactComponents(blog.content.json, RichTextoptions)}
