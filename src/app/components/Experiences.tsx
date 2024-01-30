@@ -19,6 +19,11 @@ const ExperienceRow = ({ company, title, time }: TExperience) => {
 
 const experiences: TExperience[] = [
   {
+    company: "Spatial Laser Inc",
+    title: "Software Engineer",
+    time: "Feb 2024 - Present",
+  },
+  {
     company: "Royal Bank of Canada - Ontario, Canada",
     title: "Technical Support Analyst",
     time: "July 2022 - Jan 2024 (1 years 7 months)",
@@ -26,12 +31,12 @@ const experiences: TExperience[] = [
   {
     company: "Freelancer",
     title: "Web Developer",
-    time: "Sep 2020 - Present (2 years)",
+    time: "Sep 2020 - Present",
   },
   {
     company: "ITTO Digital - Hong Kong",
     title: "Front-end Developer",
-    time: "May 2020 - May 2022",
+    time: "May 2020 - May 2022 (2 years)",
   },
   {
     company: "Lap Kai Eng. Co Ltd - Hong Kong",
