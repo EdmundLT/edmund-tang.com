@@ -21,12 +21,12 @@ const experiences: TExperience[] = [
   {
     company: "Royal Bank of Canada - Ontario, Canada",
     title: "Technical Support Analyst",
-    time: "July 2022 - Present",
+    time: "July 2022 - Jan 2024 (1 years 7 months)",
   },
   {
     company: "Freelancer",
     title: "Web Developer",
-    time: "Sep 2020 - Present",
+    time: "Sep 2020 - Present (2 years)",
   },
   {
     company: "ITTO Digital - Hong Kong",

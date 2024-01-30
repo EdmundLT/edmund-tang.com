@@ -2,11 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { client } from "../../../../apollo-client";
 import { gql } from "@apollo/client";
-import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES, MARKS} from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { BlogPost } from "../../../../types";
 import { Metadata } from "next";
-
+import {  } from '@contentful/rich-text-types';
 
 
 const page = ({ params }: any) => {
@@ -89,6 +89,7 @@ const page = ({ params }: any) => {
   );
 
   const RichTextoptions = {
+
     renderNode: {
       [BLOCKS.HEADING_1]: (node: any, children: any) => (
         <Heading1>{children}</Heading1>
@@ -115,10 +116,13 @@ const page = ({ params }: any) => {
         // render the asset accordingly
         return <img src={asset.url} alt="My image alt text" />;
       },
+      
     },
 
     renderText: (text: any) => text.replace("!", "?"),
+
   };
+  
   return (
     <main>
       <article>
