@@ -20,7 +20,7 @@ const ExperienceRow = ({
     <div className="grid lg:grid-cols-2 py-4 gap-x-4 sm:grid-cols-2 gap-y-4 ">
       <div className="text-slate-50 text-lg">
         <p>
-          {companyName} - {location} - {workMode}
+          {companyName} {location != null ? `- ${location}` : ``} - {workMode}
         </p>
         <p className="pt-2 text-slate-300">{jobTitle}</p>
       </div>
@@ -30,7 +30,6 @@ const ExperienceRow = ({
     </div>
   );
 };
-
 
 export const Experiences = () => {
   const [experiencesCollection, setExperiencesCollection] = useState([]);
