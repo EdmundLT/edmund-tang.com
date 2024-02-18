@@ -2,7 +2,7 @@ import React from "react";
 import Blog from "./Blog";
 import { Props } from "../../../../types";
 import { Metadata } from "next";
-import { client } from "../@/core/apollo-client";
+import { client } from "@/core/apollo-client";
 import { gql } from "@apollo/client";
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {

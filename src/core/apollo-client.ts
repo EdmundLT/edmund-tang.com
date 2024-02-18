@@ -20,7 +20,7 @@ import {
     };
   });
   export const client = new ApolloClient({
-    // @ts-ignore
+    // @ts-expect-error testing
     link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
   });
