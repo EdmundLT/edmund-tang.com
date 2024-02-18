@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { client } from "../../../../apollo-client";
+import { client } from "../@/core/apollo-client";
 import { gql } from "@apollo/client";
 import { BLOCKS, INLINES, MARKS} from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";

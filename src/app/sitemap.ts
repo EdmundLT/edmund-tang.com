@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import { client } from "../../apollo-client";
+import { client } from "../core/apollo-client";
 
 export default async function sitemap() {
   const urls = [
