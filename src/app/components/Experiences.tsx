@@ -1,63 +1,86 @@
-import React from "react";
+"use client";
+import { gql } from "@apollo/client";
+import React, { useEffect, useState } from "react";
+import { client } from "@/core/apollo-client";
+import { calculateYearMonthDifference, formatDate } from "../../../utils/Date";
+import { TExperience } from "@/core/to/experiences";
 
-type TExperience = {
-  company: string;
-  title: string;
-  time: string;
-};
-const ExperienceRow = ({ company, title, time }: TExperience) => {
+const ExperienceRow = ({
+  companyName,
+  jobTitle,
+  location,
+  startFrom,
+  until,
+  workMode,
+}: TExperience) => {
+  const startDateString = formatDate(startFrom);
+  const endDateString = formatDate(until);
+  const length = calculateYearMonthDifference(startFrom, until);
   return (
     <div className="grid lg:grid-cols-2 py-4 gap-x-4 sm:grid-cols-2 gap-y-4 ">
       <div className="text-slate-50 text-lg">
-        <p>{company}</p>
-        <p className="pt-2 text-slate-300">{title}</p>
+        <p>
+          {companyName} - {location} - {workMode}
+        </p>
+        <p className="pt-2 text-slate-300">{jobTitle}</p>
       </div>
-      <p className="text-end text-slate-300">{time}</p>
+      <p className="text-end text-slate-300">
+        {startDateString} - {endDateString} {length ? `(${length})` : ""}
+      </p>
     </div>
   );
 };
 
-const experiences: TExperience[] = [
-  {
-    company: "Spatial Laser Inc",
-    title: "Software Engineer",
-    time: "Feb 2024 - Present",
-  },
-  {
-    company: "Royal Bank of Canada - Ontario, Canada",
-    title: "Technical Support Analyst",
-    time: "July 2022 - Jan 2024 (1 years 7 months)",
-  },
-  {
-    company: "Freelancer",
-    title: "Web Developer",
-    time: "Sep 2020 - Present",
-  },
-  {
-    company: "ITTO Digital - Hong Kong",
-    title: "Front-end Developer",
-    time: "May 2020 - May 2022 (2 years)",
-  },
-  {
-    company: "Lap Kai Eng. Co Ltd - Hong Kong",
-    title: "Site Assistant",
-    time: "March 2019 - March 2020",
-  },
-];
 
 export const Experiences = () => {
+  const [experiencesCollection, setExperiencesCollection] = useState([]);
+  function queryByLocales() {
+    client
+      .query({
+        query: gql`
+          query ExperiencesCollection($order: [ExperiencesOrder]) {
+            experiencesCollection(order: $order) {
+              items {
+                companyName
+                jobTitle
+                location
+                startFrom
+                until
+                workMode
+              }
+            }
+          }
+        `,
+        variables: {
+          order: "startFrom_DESC",
+        },
+      })
+      .then((result: any) => {
+        setExperiencesCollection(result.data.experiencesCollection.items);
+      });
+  }
+  useEffect(() => {
+    queryByLocales();
+  }, []);
+
   return (
-    <div className="items-center py-12 px-4 mx-auto max-w-5xl lg:py-16 lg:px-6" id="experiences">
+    <div
+      className="items-center py-12 px-4 mx-auto max-w-5xl lg:py-16 lg:px-6"
+      id="experiences"
+    >
       <h2 className="mb-4 text-3xl tracking-tight font-extrabold text-slate-50">
         EXPERIENCES
       </h2>
-      {experiences.map((exp: TExperience) => {
+      {experiencesCollection.map((exp: TExperience) => {
         return (
           <ExperienceRow
-            key={exp.company}
-            company={exp.company}
-            time={exp.time}
-            title={exp.title}
+            key={exp.companyName}
+            companyName={exp.companyName}
+            jobTitle={exp.jobTitle}
+            location={exp.location}
+            startFrom={exp.startFrom}
+            until={exp.until}
+            workMode={exp.workMode}
           />
         );
       })}

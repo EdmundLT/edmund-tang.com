@@ -1,6 +1,6 @@
 "use client"
 import { IoIosArrowForward } from "react-icons/io";
-import { client } from "../../../apollo-client";
+import { client } from "@/core/apollo-client";
 import { useEffect, useState } from "react";
 import { gql } from '@apollo/client';
 const BlogSection =  () => {
